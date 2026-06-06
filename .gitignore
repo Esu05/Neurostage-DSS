@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.env
+
+# Virtual environments — DO NOT push these
+neurostage/backend/venv/
+venv/
+env/
+
+# Node — DO NOT push these
+neurostage/frontend/node_modules/
+node_modules/
+dist/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Logs
+*.log
+
+# NOTE: *.keras and *.joblib are intentionally NOT ignored
+# They must be committed so Render can load them
