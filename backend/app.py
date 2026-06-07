@@ -193,10 +193,12 @@ async def predict(file: UploadFile = File(...)):
 # ── Health check ──────────────────────────────────────────────────────────────
 @app.get("/health")
 async def health():
+    ensemble = registry.get("ensemble")
     return {
         "status": "ok",
+        "ensemble_classes": ensemble.classes_.tolist() if ensemble else None,
         "models_loaded": {
-            "cnn":      registry.get("feature_extractor") is not None,
+            "cnn": registry.get("feature_extractor") is not None,
             "ensemble": registry.get("ensemble") is not None,
         },
     }
