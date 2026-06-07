@@ -51,7 +51,7 @@ async def lifespan(app: FastAPI):
 
     try:
         # 1. Load the full compiled Keras fusion model (dual-CNN + dense head)
-        full_model: tf.keras.Model = load_model("fusion_cnn_model.keras")
+        full_model: tf.keras.Model = load_model("fusion_cnn_model.h5")
         logger.info("✅  fusion_cnn_model.keras loaded  —  "
                     f"params: {full_model.count_params():,}")
 
