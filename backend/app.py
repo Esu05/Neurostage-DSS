@@ -98,8 +98,11 @@ app = FastAPI(
 # Allow React dev server at localhost:5173 (Vite default) and :3000 (CRA)
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://localhost:5173"],
-    allow_credentials=True,
+    allow_origins=[
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://neurostage-dss.vercel.app",
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
